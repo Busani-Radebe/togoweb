@@ -1,0 +1,336 @@
+/* Industries.css - With proper card spacing */
+.industries-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.industries-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.industries-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.industries-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.industries-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #2c5aa0, #3a7bd5);
+  border-radius: 2px;
+}
+
+.industries-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 30px auto 0;
+  line-height: 1.6;
+}
+
+/* Industries Grid with Spacing */
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px; /* Increased gap for more spacing */
+  margin-bottom: 60px;
+}
+
+.industry-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  position: relative;
+  border: 1px solid #f0f0f0;
+}
+
+.industry-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+  border-color: #e0e0e0;
+}
+
+.industry-card-content {
+  padding: 40px 35px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  background: white;
+  border-radius: 15px;
+}
+
+.industry-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2c5aa0 0%, #3a7bd5 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.industry-card:hover::before {
+  opacity: 0.05;
+}
+
+.industry-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #2c5aa0, #3a7bd5);
+  opacity: 0.8;
+  border-radius: 15px 15px 0 0;
+}
+
+.industry-icon {
+  font-size: 3.5rem;
+  margin-bottom: 25px;
+  transition: all 0.4s ease;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 50%;
+  background: rgba(44, 90, 160, 0.08);
+}
+
+.industry-card:hover .industry-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: rgba(44, 90, 160, 0.15);
+}
+
+.industry-name {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  transition: all 0.4s ease;
+}
+
+.industry-card:hover .industry-name {
+  color: #2c5aa0;
+  transform: translateY(-3px);
+}
+
+.industry-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  opacity: 1;
+  transition: all 0.4s ease;
+}
+
+.industry-card:hover .industry-description {
+  color: #555;
+  transform: translateY(-2px);
+}
+
+/* Hover indicator */
+.industry-hover-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2c5aa0;
+  font-weight: 500;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.industry-card:hover .industry-hover-indicator {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.hover-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.industry-card:hover .hover-arrow {
+  transform: translateX(5px);
+}
+
+/* Call to Action */
+.industries-cta {
+  text-align: center;
+  padding: 50px 40px;
+  background: linear-gradient(135deg, #2c5aa0 0%, #3a7bd5 100%);
+  border-radius: 15px;
+  margin-top: 40px;
+  box-shadow: 0 10px 30px rgba(44, 90, 160, 0.2);
+}
+
+.cta-text {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.cta-button {
+  display: inline-block;
+  background: white;
+  color: #2c5aa0;
+  padding: 16px 40px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+}
+
+.cta-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+  background: #f8f9fa;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+}
+
+@media (max-width: 992px) {
+  .industries-grid {
+    gap: 30px;
+  }
+  
+  .industry-card-content {
+    padding: 35px 30px;
+  }
+  
+  .cta-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .industries-section {
+    padding: 60px 0;
+  }
+  
+  .industries-title {
+    font-size: 2rem;
+  }
+  
+  .industries-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 500px;
+    margin: 0 auto 50px;
+  }
+  
+  .industry-card-content {
+    padding: 30px 25px;
+  }
+  
+  .industry-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .industry-name {
+    font-size: 1.25rem;
+  }
+  
+  .industries-cta {
+    padding: 40px 30px;
+  }
+  
+  .cta-text {
+    font-size: 1.1rem;
+  }
+  
+  .cta-button {
+    padding: 14px 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .industries-container {
+    padding: 0 15px;
+  }
+  
+  .industries-title {
+    font-size: 1.8rem;
+  }
+  
+  .industries-subtitle {
+    font-size: 1rem;
+  }
+  
+  .industry-card-content {
+    padding: 25px 20px;
+  }
+  
+  .industry-icon {
+    font-size: 2.5rem;
+    padding: 12px;
+  }
+  
+  .industry-name {
+    font-size: 1.15rem;
+  }
+  
+  .industry-description {
+    font-size: 0.9rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Add more spacing on larger screens */
+@media (min-width: 1400px) {
+  .industries-grid {
+    gap: 50px;
+  }
+  
+  .industry-card-content {
+    padding: 45px 40px;
+  }
+}

@@ -132,10 +132,7 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="services-cta">
-          <p>Need a custom solution?</p>
-          <a href="#contact" className="btn btn-primary">Get in Touch</a>
-        </div>
+        
       </div>
     </section>
   )
