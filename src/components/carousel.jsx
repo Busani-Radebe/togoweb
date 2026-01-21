@@ -81,7 +81,7 @@ const Carousel = () => {
             precision, and long-term value.
           </p>
           
-          <button className="learn-more-btn">LEARN MORE</button>
+          
         </div>
 
         {/* Image Carousel Section */}

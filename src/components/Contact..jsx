@@ -52,14 +52,14 @@ const Contact = () => {
     {
       icon: '📞',
       title: 'Phone',
-      details: ['+27 (0) 14 533 XXXX', '+27 (0) 83 123 4567'],
+      details: ['+27 78 385 7960'],
       link: 'tel:+2714533'
     },
     {
       icon: '📧',
       title: 'Email',
-      details: ['info@togoelectricals.co.za', 'support@togoelectricals.co.za'],
-      link: 'mailto:info@togoelectricals.co.za'
+      details: ['amos@togoelectrical.co.za', 'togo@togoelectricals.co.za'],
+      link: 'mailto:info@togoelectrical.co.za'
     },
     {
       icon: '📍',
@@ -266,8 +266,8 @@ const Contact = () => {
                 <div className="emergency-text">
                   <h4>24/7 Emergency Service Available</h4>
                   <p>For urgent electrical emergencies, call us anytime</p>
-                  <a href="tel:+27831234567" className="emergency-button">
-                    Call Now: +27 (0) 83 123 4567
+                  <a href="tel:+27783857960" className="emergency-button">
+                    Call Now: +27 (0) 78 385 7960
                   </a>
                 </div>
               </div>
@@ -297,12 +297,7 @@ const Contact = () => {
                     📍 Open in Google Maps
                   </a>
                 </div>
-                <div className="map-placeholder">
-                  <div className="map-overlay">
-                    <p className="map-instruction">📍 Interactive map would appear here</p>
-                    <p className="map-instruction">Replace with actual Google Maps embed</p>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>

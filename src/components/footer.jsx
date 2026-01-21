@@ -12,8 +12,8 @@ export default function Footer() {
   ]
 
   const contactInfo = [
-    { icon: '📞', text: '+27 (0) 14 533 XXXX', href: 'tel:+2714533' },
-    { icon: '📧', text: 'info@togoelectricals.co.za', href: 'mailto:info@togoelectricals.co.za' },
+    { icon: '📞', text: '+27 (0) 78 385 7960', href: 'tel:+27783857960' },
+    { icon: '📧', text: 'togo@togoelectrical.co.za', href: 'mailto:info@togoelectricals.co.za' },
     { icon: '📍', text: 'Cashan, Rustenburg, North West, South Africa', href: null }
   ]
 
@@ -82,19 +82,8 @@ export default function Footer() {
 
             {/* Social Media Section */}
             <div className="footer-column">
-              <h4 className="footer-column-title">Follow Us</h4>
-              <div className="social-icons">
-                {socialLinks.map((social, index) => (
-                  <a 
-                    key={index} 
-                    href={social.href} 
-                    className="social-link"
-                    aria-label={social.label}
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
+              
+              
             </div>
           </div>
         </div>
