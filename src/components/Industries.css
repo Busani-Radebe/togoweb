@@ -1,4 +1,4 @@
-/* Industries.css - With proper card spacing */
+/* Industries.css - Fixed button overflow */
 .industries-section {
   padding: 80px 0;
   background-color: #f8f9fa;
@@ -9,21 +9,26 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 /* Header */
 .industries-header {
   text-align: center;
   margin-bottom: 60px;
+  padding: 0 10px;
 }
 
 .industries-title {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem); /* Responsive font size */
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 15px;
   position: relative;
   display: inline-block;
+  word-wrap: break-word;
+  max-width: 100%;
 }
 
 .industries-title::after {
@@ -39,40 +44,41 @@
 }
 
 .industries-subtitle {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem); /* Responsive font size */
   color: #666;
   max-width: 700px;
   margin: 30px auto 0;
   line-height: 1.6;
+  padding: 0 15px;
+  word-wrap: break-word;
 }
 
-/* Industries Grid with Spacing */
+/* Industries Grid */
 .industries-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px; /* Increased gap for more spacing */
-  margin-bottom: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly smaller min width */
+  gap: 30px;
+  margin-bottom: 50px;
+  width: 100%;
 }
 
 .industry-card {
   background: white;
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
   height: 100%;
-  position: relative;
-  border: 1px solid #f0f0f0;
+  max-width: 100%;
 }
 
 .industry-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
-  border-color: #e0e0e0;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .industry-card-content {
-  padding: 40px 35px;
+  padding: 30px 25px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -81,105 +87,51 @@
   position: relative;
   z-index: 2;
   background: white;
-  border-radius: 15px;
-}
-
-.industry-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #2c5aa0 0%, #3a7bd5 100%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-  border-radius: 15px;
-}
-
-.industry-card:hover::before {
-  opacity: 0.05;
-}
-
-.industry-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, #2c5aa0, #3a7bd5);
-  opacity: 0.8;
-  border-radius: 15px 15px 0 0;
+  border-radius: 12px;
 }
 
 .industry-icon {
-  font-size: 3.5rem;
-  margin-bottom: 25px;
-  transition: all 0.4s ease;
+  font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive icon size */
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
   display: inline-block;
-  padding: 15px;
-  border-radius: 50%;
-  background: rgba(44, 90, 160, 0.08);
-}
-
-.industry-card:hover .industry-icon {
-  transform: scale(1.1) rotate(5deg);
-  background: rgba(44, 90, 160, 0.15);
 }
 
 .industry-name {
-  font-size: 1.35rem;
+  font-size: clamp(1.1rem, 2vw, 1.35rem); /* Responsive font size */
   font-weight: 600;
   color: #1a1a1a;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   line-height: 1.4;
-  transition: all 0.4s ease;
-}
-
-.industry-card:hover .industry-name {
-  color: #2c5aa0;
-  transform: translateY(-3px);
+  word-wrap: break-word;
+  width: 100%;
 }
 
 .industry-description {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.6vw, 0.95rem); /* Responsive font size */
   color: #666;
-  line-height: 1.7;
-  margin: 0;
-  opacity: 1;
-  transition: all 0.4s ease;
+  line-height: 1.6;
+  margin: 0 0 15px 0;
+  width: 100%;
 }
 
-.industry-card:hover .industry-description {
-  color: #555;
-  transform: translateY(-2px);
-}
-
-/* Hover indicator */
 .industry-hover-indicator {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 8px;
   color: #2c5aa0;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   opacity: 0;
   transition: all 0.3s ease;
 }
 
 .industry-card:hover .industry-hover-indicator {
   opacity: 1;
-  transform: translateX(-50%) translateY(-5px);
 }
 
 .hover-arrow {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   transition: transform 0.3s ease;
 }
 
@@ -187,40 +139,49 @@
   transform: translateX(5px);
 }
 
-/* Call to Action */
+/* Call to Action - FIXED BUTTON OVERFLOW */
 .industries-cta {
   text-align: center;
-  padding: 50px 40px;
+  padding: 30px 20px; /* Reduced padding */
   background: linear-gradient(135deg, #2c5aa0 0%, #3a7bd5 100%);
-  border-radius: 15px;
-  margin-top: 40px;
-  box-shadow: 0 10px 30px rgba(44, 90, 160, 0.2);
+  border-radius: 12px;
+  margin-top: 30px;
+  width: 100%;
+  box-sizing: border-box; /* Include padding in width */
 }
 
 .cta-text {
   color: white;
-  font-size: 1.3rem;
-  margin-bottom: 30px;
+  font-size: clamp(1rem, 2vw, 1.3rem); /* Responsive font size */
+  margin-bottom: 20px;
   font-weight: 500;
   line-height: 1.5;
+  padding: 0 10px;
+  word-wrap: break-word;
 }
 
 .cta-button {
   display: inline-block;
   background: white;
   color: #2c5aa0;
-  padding: 16px 40px;
-  border-radius: 10px;
+  padding: clamp(12px, 2vw, 16px) clamp(20px, 4vw, 40px); /* Responsive padding */
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: clamp(0.85rem, 1.8vw, 1rem); /* Responsive font size */
   transition: all 0.3s ease;
-  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .cta-button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
   background: #f8f9fa;
 }
 
@@ -228,21 +189,7 @@
 @media (max-width: 1200px) {
   .industries-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 35px;
-  }
-}
-
-@media (max-width: 992px) {
-  .industries-grid {
-    gap: 30px;
-  }
-  
-  .industry-card-content {
-    padding: 35px 30px;
-  }
-  
-  .cta-text {
-    font-size: 1.2rem;
+    gap: 25px;
   }
 }
 
@@ -251,86 +198,107 @@
     padding: 60px 0;
   }
   
-  .industries-title {
-    font-size: 2rem;
-  }
-  
-  .industries-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    max-width: 500px;
-    margin: 0 auto 50px;
-  }
-  
-  .industry-card-content {
-    padding: 30px 25px;
-  }
-  
-  .industry-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-  }
-  
-  .industry-name {
-    font-size: 1.25rem;
-  }
-  
-  .industries-cta {
-    padding: 40px 30px;
-  }
-  
-  .cta-text {
-    font-size: 1.1rem;
-  }
-  
-  .cta-button {
-    padding: 14px 35px;
-  }
-}
-
-@media (max-width: 480px) {
   .industries-container {
     padding: 0 15px;
   }
   
-  .industries-title {
-    font-size: 1.8rem;
-  }
-  
-  .industries-subtitle {
-    font-size: 1rem;
+  .industries-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto 40px;
   }
   
   .industry-card-content {
     padding: 25px 20px;
   }
   
-  .industry-icon {
-    font-size: 2.5rem;
-    padding: 12px;
-  }
-  
-  .industry-name {
-    font-size: 1.15rem;
-  }
-  
-  .industry-description {
-    font-size: 0.9rem;
-  }
-  
   .cta-button {
-    width: 100%;
-    text-align: center;
+    white-space: normal; /* Allow text to wrap on mobile */
+    padding: 14px 25px;
+    font-size: 0.95rem;
+    width: auto;
+    display: inline-block;
+    max-width: 90%;
   }
 }
 
-/* Add more spacing on larger screens */
-@media (min-width: 1400px) {
-  .industries-grid {
-    gap: 50px;
+@media (max-width: 576px) {
+  .industries-container {
+    padding: 0 12px;
   }
   
-  .industry-card-content {
-    padding: 45px 40px;
+  .industries-header {
+    margin-bottom: 40px;
+    padding: 0 5px;
+  }
+  
+  .industries-title {
+    font-size: 1.6rem;
+  }
+  
+  .industries-subtitle {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+  
+  .industries-cta {
+    padding: 25px 15px;
+    margin-top: 25px;
+  }
+  
+  .cta-text {
+    font-size: 1rem;
+    padding: 0 5px;
+    margin-bottom: 15px;
+  }
+  
+  .cta-button {
+    width: 100%; /* Full width on very small screens */
+    max-width: 100%;
+    padding: 14px 20px;
+    font-size: 0.9rem;
+    white-space: normal;
+    line-height: 1.4;
+  }
+  
+  .industry-name {
+    font-size: 1.1rem;
+  }
+  
+  .industry-description {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .industries-title {
+    font-size: 1.4rem;
+  }
+  
+  .industries-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .cta-button {
+    font-size: 0.85rem;
+    padding: 12px 15px;
+  }
+  
+  .cta-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* Additional safety to prevent overflow */
+.industries-section * {
+  max-width: 100%;
+}
+
+/* Alternative: Shorter button text for very small screens */
+@media (max-width: 350px) {
+  .cta-button {
+    font-size: 0.8rem;
+    padding: 10px 12px;
   }
 }
